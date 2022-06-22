@@ -1,0 +1,11 @@
+// https://leetcode.com/problems/department-highest-salary
+
+# Write your MySQL query statement below
+select d.name as Department,e.name as Employee,salary as Salary
+from Employee e,Department d
+where e.departmentId = d.id
+    and e.salary>=all(
+        select e1.salary
+        from Employee e1
+        where e.departmentId=e1.departmentId
+    );

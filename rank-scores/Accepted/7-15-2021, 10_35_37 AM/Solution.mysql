@@ -1,0 +1,7 @@
+// https://leetcode.com/problems/rank-scores
+
+# Write your MySQL query statement below
+select Scores.score,
+        DENSE_RANK() over(order by Scores.score desc) 
+        as 'Rank' 
+        from Scores;

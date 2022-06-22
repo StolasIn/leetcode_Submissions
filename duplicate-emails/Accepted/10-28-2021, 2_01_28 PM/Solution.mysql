@@ -1,0 +1,7 @@
+// https://leetcode.com/problems/duplicate-emails
+
+# Write your MySQL query statement below
+select p.email
+from Person p,Person p1
+where p.id<>p1.id and p.email=p1.email
+group by p.email;
